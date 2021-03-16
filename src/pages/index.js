@@ -1,12 +1,14 @@
 import React from "react";
 import HeadingOne from "../components/HeadingOne";
-import FormBuilder from "../components/FormBuilder";
+import FormBuilder from "../components/formBuilder";
 const Index = () => {
-  const componets = [
+  const input = () => <input />;
+  const Button = (children) => <button>{children}</button>;
+  const components = [
     {
-      component: <input />,
+      component: input,
     },
-    { component: <select /> },
+    { component: Button("hi") },
   ];
   return (
     <>

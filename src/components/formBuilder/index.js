@@ -4,7 +4,7 @@ const FormBuilder = (props) => {
   return (
     <div>
       {props.items.map((item, index) => (
-        <>{item.hasLabel && <item.component>{item.children}</item.component>}</>
+        <>{item && <item.component />}</>
       ))}
     </div>
   );
