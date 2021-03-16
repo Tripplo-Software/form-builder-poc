@@ -6,7 +6,7 @@ const Index = () => {
   const Button = (children) => <button>{children}</button>;
   const components = [
     {
-      component: input,
+      component: input(),
     },
     { component: Button("hi") },
   ];
