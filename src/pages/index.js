@@ -13,6 +13,8 @@ const Index = () => {
       <HeadingOne className="text-center text-blue-500">
         This is the home page of the app!
       </HeadingOne>
+
+      <FormBuilder items={components} />
     </>
   );
 };
