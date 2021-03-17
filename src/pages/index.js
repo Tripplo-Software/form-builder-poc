@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import HeadingOne from "../components/HeadingOne";
 import FormBuilder from "../components/formBuilder";
 const Index = () => {
+  const [formData, setFormData] = useState({});
   const components = [
     {
       component: <input />,
@@ -14,7 +15,7 @@ const Index = () => {
         This is the home page of the app!
       </HeadingOne>
 
-      <FormBuilder items={components} />
+      <FormBuilder data={formData} items={components} />
     </>
   );
 };
