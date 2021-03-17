@@ -10,6 +10,7 @@ const Index = () => {
     },
     { component: <button>children</button> },
   ];
+  console.log("formData", formData);
   return (
     <>
       <HeadingOne className="text-center text-blue-500">
