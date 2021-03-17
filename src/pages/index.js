@@ -3,6 +3,7 @@ import HeadingOne from "../components/HeadingOne";
 import FormBuilder from "../components/formBuilder";
 const Index = () => {
   const [formData, setFormData] = useState({});
+  const handleChange = (form) => setFormData(form);
   const components = [
     {
       component: <input />,
@@ -15,7 +16,7 @@ const Index = () => {
         This is the home page of the app!
       </HeadingOne>
 
-      <FormBuilder data={formData} items={components} />
+      <FormBuilder data={formData} items={components} update={handleChange} />
     </>
   );
 };
