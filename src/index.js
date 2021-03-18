@@ -5,9 +5,6 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
-import _ from "lodash";
-window._ = _;
-// eslint-disable-next-line sort-imports
 
 //add the uri here
 const client = new ApolloClient({

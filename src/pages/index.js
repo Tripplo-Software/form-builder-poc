@@ -6,7 +6,7 @@ import FormBuilder from "../components/formBuilder";
 const Index = () => {
   const { register, handleSubmit } = useForm();
   const [formData, setFormData] = useState({});
-  const handleChange = (data) => console.log(data);
+  const handleChange = (data) => setFormData({ ...data });
   const components = [
     {
       component: (
@@ -27,7 +27,7 @@ const Index = () => {
         This is the home page of the app!
       </HeadingOne>
 
-      <FormBuilder items={components} />
+      <FormBuilder items={components} data={formData} update={handleChange} />
 
       <button onClick={() => handleSubmit(handleChange)}>Click me</button>
     </>
