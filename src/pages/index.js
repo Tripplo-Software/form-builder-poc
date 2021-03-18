@@ -2,16 +2,20 @@ import React, { useState } from "react";
 import HeadingOne from "../components/HeadingOne";
 import FormBuilder from "../components/formBuilder";
 
+const FancyInput = React.forwardRef((props, ref) => (
+  <input ref={ref} className="border border-red-400" {...props} />
+));
 const Index = () => {
   const [formData, setFormData] = useState({});
   const handleChange = (data) => setFormData({ ...data });
+
   const components = [
     {
-      component: <input name="player" className="border border-red-400" />,
+      component: <FancyInput name="player" />,
       children: <span>Text</span>,
     },
     {
-      component: <input name="team" className="border border-red-400" />,
+      component: <FancyInput name="ball" />,
     },
   ];
   console.log("formData", formData);
@@ -23,7 +27,7 @@ const Index = () => {
 
       <FormBuilder items={components} data={formData} update={handleChange} />
 
-      <button onClick={() => handleSubmit(handleChange)}>Click me</button>
+      {/* <button onClick={() => handleSubmit(handleChange)}>Click me</button> */}
     </>
   );
 };

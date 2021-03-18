@@ -1,14 +1,16 @@
 import React from "react";
 import _ from "lodash";
 const FieldComponent = ({ item, update, data }) => {
+  console.log("item", item.component);
   const Component = () => item.component;
   return (
     <span>
       <Component
-        onChange={(value) => {
-          console.log("value", value);
-          if (value.currentTarget) {
-            update(_.set(data, item.name, value.currentTarget.value));
+        name={item.name}
+        onChange={(e) => {
+          console.log("value", e);
+          if (e.currentTarget) {
+            update(_.set(data, item.name, e.currentTarget.value));
           }
         }}
       >
