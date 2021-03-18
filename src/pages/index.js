@@ -1,23 +1,17 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
 import HeadingOne from "../components/HeadingOne";
 import FormBuilder from "../components/formBuilder";
 
 const Index = () => {
-  const { register, handleSubmit } = useForm();
   const [formData, setFormData] = useState({});
   const handleChange = (data) => setFormData({ ...data });
   const components = [
     {
-      component: (
-        <input name="player" ref={register} className="border border-red-400" />
-      ),
+      component: <input name="player" className="border border-red-400" />,
       children: <span>Text</span>,
     },
     {
-      component: (
-        <input name="team" ref={register} className="border border-red-400" />
-      ),
+      component: <input name="team" className="border border-red-400" />,
     },
   ];
   console.log("formData", formData);

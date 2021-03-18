@@ -6,6 +6,7 @@ const FieldComponent = ({ item, update, data }) => {
     <span>
       <Component
         onChange={(value) => {
+          console.log("value", value);
           if (value.currentTarget) {
             update(_.set(data, item.name, value.currentTarget.value));
           }
