@@ -1,5 +1,12 @@
 import React from "react";
 
+const FieldComponent = ({ item }) => {
+  return (
+    <>
+      <item.component />
+    </>
+  );
+};
 const FormBuilder = (props) => {
   return (
     <div>
