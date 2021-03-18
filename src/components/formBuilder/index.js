@@ -7,6 +7,7 @@ const FieldComponent = ({ item, update }) => {
       <Component
         onChange={(value) => {
           if (value.currentTarget) {
+            update(_.set());
           }
         }}
       >
