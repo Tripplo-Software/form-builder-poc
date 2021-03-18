@@ -2,16 +2,21 @@ import React, { useState } from "react";
 import HeadingOne from "../components/HeadingOne";
 import FormBuilder from "../components/formBuilder";
 
-const FancyInput = React.forwardRef((props, ref) => (
-  <input ref={ref} className="border border-red-400" {...props} />
+const FancyInput = React.forwardRef((props, ref, onChange) => (
+  <input
+    ref={ref}
+    className="border border-red-400"
+    {...props}
+    onChange={onChange}
+  />
 ));
 const Index = () => {
   const [formData, setFormData] = useState({});
   const handleChange = (data) => setFormData({ ...data });
-
+  const ref = React.createRef();
   const components = [
     {
-      component: <FancyInput name="player" />,
+      component: <FancyInput name="player" ref={ref} />,
       children: <span>Text</span>,
     },
     {
