@@ -1,10 +1,17 @@
 import React from "react";
 
-const FieldComponent = ({ item }) => {
+const FieldComponent = ({ item, update }) => {
   const Component = () => item.component;
   return (
     <span>
-      <Component>{item.children}</Component>
+      <Component
+        onChange={(value) => {
+          if (value.currentTarget) {
+          }
+        }}
+      >
+        {item.children}
+      </Component>
     </span>
   );
 };
