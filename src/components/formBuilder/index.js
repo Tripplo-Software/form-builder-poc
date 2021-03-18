@@ -1,13 +1,13 @@
 import React from "react";
 
-const FieldComponent = ({ item, update }) => {
+const FieldComponent = ({ item, update, data }) => {
   const Component = () => item.component;
   return (
     <span>
       <Component
         onChange={(value) => {
           if (value.currentTarget) {
-            update(_.set());
+            update(_.set(data, item.name, value.currentTarget.value));
           }
         }}
       >
