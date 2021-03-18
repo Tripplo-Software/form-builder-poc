@@ -12,6 +12,7 @@ const Index = () => {
       component: (
         <input name="player" ref={register} className="border border-red-400" />
       ),
+      children: <span>Text</span>,
     },
     {
       component: (

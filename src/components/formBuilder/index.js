@@ -1,10 +1,11 @@
 import React from "react";
 
 const FieldComponent = ({ item }) => {
+  const Component = () => item.component;
   return (
-    <>
-      <item.component />
-    </>
+    <span>
+      <Component>{item.children}</Component>
+    </span>
   );
 };
 const FormBuilder = (props) => {
