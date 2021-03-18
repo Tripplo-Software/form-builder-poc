@@ -2,13 +2,8 @@ import React, { useState } from "react";
 import HeadingOne from "../components/HeadingOne";
 import FormBuilder from "../components/formBuilder";
 
-const FancyInput = React.forwardRef((props, ref, onChange) => (
-  <input
-    ref={ref}
-    className="border border-red-400"
-    {...props}
-    onChange={onChange}
-  />
+const FancyInput = React.forwardRef((props, ref) => (
+  <input ref={ref} className="border border-red-400" {...props} />
 ));
 const Index = () => {
   const [formData, setFormData] = useState({});
