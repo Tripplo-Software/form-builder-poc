@@ -11,7 +11,7 @@ const FormBuilder = (props) => {
   return (
     <div>
       {props.items.map((item, index) => (
-        <>{item && item.component}</>
+        <>{item && <FieldComponent item={item} />}</>
       ))}
     </div>
   );
