@@ -4,13 +4,18 @@ const getArrayItems = () => {
   //   const InputComponent = <Input />;
   const components = [
     {
-      component: Input,
-      name: "email",
-      //   children: <span>Text</span>,
-    },
-    {
-      component: Input,
-      name: "job",
+      name: "border_jobs",
+      items: [
+        {
+          component: Input,
+          name: "email",
+          //   children: <span>Text</span>,
+        },
+        {
+          component: Input,
+          name: "job",
+        },
+      ],
     },
   ];
 
