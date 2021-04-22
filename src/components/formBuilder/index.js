@@ -22,6 +22,10 @@ const FieldComponent = ({ item, update, data }) => {
     </span>
   );
 };
+
+const ArrayComponent = ({ item, update, data }) => {
+  return <span></span>;
+};
 const FormBuilder = (props) => {
   return (
     <div>
