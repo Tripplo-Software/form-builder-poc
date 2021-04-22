@@ -4,6 +4,7 @@ const getArrayItems = () => {
   //   const InputComponent = <Input />;
   const components = [
     {
+      add_label: "Add jobs",
       name: "border_jobs",
       items: [
         {

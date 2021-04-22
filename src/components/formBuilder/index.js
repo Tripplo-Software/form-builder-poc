@@ -39,7 +39,11 @@ const ArrayComponent = ({ item, update, data }) => {
     }
   };
 
-  return <span></span>;
+  return (
+    <span>
+      <button>{item.add_label}</button>
+    </span>
+  );
 };
 const FormBuilder = (props) => {
   console.log("FormBuilder", props);
