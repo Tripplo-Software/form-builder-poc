@@ -1,15 +1,16 @@
 import React from "react";
 import _ from "lodash";
 const FieldComponent = ({ item, update, data, onChange }) => {
-  console.log("item", item.component);
-  const Component = () => item.component;
+  console.log("item", item, data);
   return (
     <span>
       {/* <Component name={item.name} onChange={onChange}>
         {item.children}
       </Component> */}
 
-      <item.component>{item.children}</item.component>
+      <item.component onChange={(e) => console.log("e", e)}>
+        {item.children}
+      </item.component>
     </span>
   );
 };

@@ -2,14 +2,14 @@ import React from "react";
 import { Input } from "antd";
 
 const getItems = () => {
-  const InputComponent = () => <Input />;
+  //   const InputComponent = <Input />;
   const components = [
     {
-      component: InputComponent,
-      children: <span>Text</span>,
+      component: Input,
+      //   children: <span>Text</span>,
     },
     {
-      component: InputComponent,
+      component: Input,
     },
   ];
 
