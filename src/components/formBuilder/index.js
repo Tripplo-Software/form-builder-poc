@@ -32,7 +32,6 @@ const FormBuilder = (props) => {
               item={item}
               key={index}
               data={props.data}
-              onChange={onChange}
               update={props.update}
             />
           )}
