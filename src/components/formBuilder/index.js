@@ -24,6 +24,8 @@ const FieldComponent = ({ item, update, data }) => {
 };
 
 const ArrayComponent = ({ item, update, data }) => {
+  console.log("ArrayComponent-Value", item);
+
   let valueItems = [];
   const addItem = () => {
     if (valueItems.length === 0) {
@@ -37,7 +39,6 @@ const ArrayComponent = ({ item, update, data }) => {
     }
   };
 
-  console.log("ArrayComponent-Value", valueItems);
   return <span></span>;
 };
 const FormBuilder = (props) => {
@@ -47,6 +48,15 @@ const FormBuilder = (props) => {
         <>
           {item && (
             <FieldComponent
+              item={item}
+              key={index}
+              data={props.data}
+              update={props.update}
+            />
+          )}
+
+          {item.items && (
+            <ArrayComponent
               item={item}
               key={index}
               data={props.data}
