@@ -1,6 +1,6 @@
 import React from "react";
 import _ from "lodash";
-const FieldComponent = ({ item, update, data, onChange }) => {
+const FieldComponent = ({ item, update, data }) => {
   console.log("item", item, data);
   return (
     <span>
@@ -8,7 +8,15 @@ const FieldComponent = ({ item, update, data, onChange }) => {
         {item.children}
       </Component> */}
 
-      <item.component onChange={(e) => console.log("e", e)}>
+      <item.component
+        onChange={(e) => {
+          const dataClone = { ...data };
+
+          dataClone[`${item.name}`] = e.currentTarget.value;
+
+          update(dataClone);
+        }}
+      >
         {item.children}
       </item.component>
     </span>
