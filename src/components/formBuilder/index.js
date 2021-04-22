@@ -23,8 +23,6 @@ const FieldComponent = ({ item, update, data }) => {
   );
 };
 const FormBuilder = (props) => {
-  const onChange = (e) => console.log("FormBuilder-e", e);
-
   return (
     <div>
       {props.items.map((item, index) => (
