@@ -1,30 +1,20 @@
 import React, { useState } from "react";
 import HeadingOne from "../components/HeadingOne";
 import FormBuilder from "../components/formBuilder";
-import { Input } from "antd";
 
-const FancyInput = React.forwardRef((props, ref, onChange) => (
-  <input
-    ref={ref}
-    className="border border-red-400"
-    {...props}
-    onChange={onChange}
-  />
-));
+// const FancyInput = React.forwardRef((props, ref, onChange) => (
+//   <input
+//     ref={ref}
+//     className="border border-red-400"
+//     {...props}
+//     onChange={onChange}
+//   />
+// ));
 const Index = () => {
   const [formData, setFormData] = useState({});
   const handleChange = (data) => setFormData({ ...data });
   const ref = React.createRef();
-  const onChange = (e) => console.log("e", e);
-  const components = [
-    {
-      component: <FancyInput name="player" ref={ref} />,
-      children: <span>Text</span>,
-    },
-    {
-      component: <Input onChange={onChange} />,
-    },
-  ];
+
   console.log("formData", formData);
   return (
     <>
