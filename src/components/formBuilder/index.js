@@ -24,6 +24,20 @@ const FieldComponent = ({ item, update, data }) => {
 };
 
 const ArrayComponent = ({ item, update, data }) => {
+  let valueItems = [];
+  const addItem = () => {
+    if (valueItems.length === 0) {
+      const firstItem = {
+        name: null,
+        job: null,
+      };
+      valueItems.push(firstItem);
+    } else {
+      valueItems.push({ name: null, job: null });
+    }
+  };
+
+  console.log("ArrayComponent-Value", valueItems);
   return <span></span>;
 };
 const FormBuilder = (props) => {
