@@ -42,11 +42,12 @@ const ArrayComponent = ({ item, update, data }) => {
   return <span></span>;
 };
 const FormBuilder = (props) => {
+  console.log("FormBuilder", props);
   return (
     <div>
       {props.items.map((item, index) => (
         <>
-          {item && (
+          {item && !item.items && (
             <FieldComponent
               item={item}
               key={index}
