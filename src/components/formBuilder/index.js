@@ -1,7 +1,7 @@
 import React from "react";
 import _ from "lodash";
 const FieldComponent = ({ item, update, data, onChange }) => {
-  console.log("item", item.component.type.render);
+  console.log("item", item.component);
   const Component = () => item.component;
   return (
     <span>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import HeadingOne from "../components/HeadingOne";
 import FormBuilder from "../components/formBuilder";
-
+import getItems from "./getItems";
 // const FancyInput = React.forwardRef((props, ref, onChange) => (
 //   <input
 //     ref={ref}
@@ -22,7 +22,7 @@ const Index = () => {
         This is the home page of the app!
       </HeadingOne>
 
-      <FormBuilder items={components} data={formData} update={handleChange} />
+      <FormBuilder items={getItems()} data={formData} update={handleChange} />
 
       {/* <button onClick={() => handleSubmit(handleChange)}>Click me</button> */}
     </>
