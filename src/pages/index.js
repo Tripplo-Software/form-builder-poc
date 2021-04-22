@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import HeadingOne from "../components/HeadingOne";
 import FormBuilder from "../components/formBuilder";
+import { Input } from "antd";
 
 const FancyInput = React.forwardRef((props, ref, onChange) => (
   <input
@@ -14,13 +15,14 @@ const Index = () => {
   const [formData, setFormData] = useState({});
   const handleChange = (data) => setFormData({ ...data });
   const ref = React.createRef();
+  const onChange = (e) => console.log("e", e);
   const components = [
     {
       component: <FancyInput name="player" ref={ref} />,
       children: <span>Text</span>,
     },
     {
-      component: <FancyInput name="ball" />,
+      component: <Input onChange={onChange} />,
     },
   ];
   console.log("formData", formData);
