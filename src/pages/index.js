@@ -8,6 +8,8 @@ const Index = () => {
   const [formData, setFormData] = useState({});
   const [arrayData, setArrayData] = useState({});
   const handleChange = (data) => setFormData({ ...data });
+  const handleArrayChange = (data) => setArrayData({ ...data });
+
   const ref = React.createRef();
 
   console.log("formData", formData);
@@ -21,8 +23,8 @@ const Index = () => {
       <p>Array forms</p>
       <FormBuilder
         items={getArrayItems()}
-        data={formData}
-        update={handleChange}
+        data={arrayData}
+        update={handleArrayChange}
       />
 
       {/* <button onClick={() => handleSubmit(handleChange)}>Click me</button> */}
