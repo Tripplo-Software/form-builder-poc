@@ -1,4 +1,3 @@
-import React from "react";
 import { Input } from "antd";
 
 const getItems = () => {
@@ -6,10 +5,12 @@ const getItems = () => {
   const components = [
     {
       component: Input,
+      name: "email",
       //   children: <span>Text</span>,
     },
     {
       component: Input,
+      name: "job",
     },
   ];
 
