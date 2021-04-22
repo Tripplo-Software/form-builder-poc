@@ -14,3 +14,5 @@ const getItems = () => {
 
   return components;
 };
+
+export default getItems;
