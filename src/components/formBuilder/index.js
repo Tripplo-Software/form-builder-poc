@@ -45,7 +45,7 @@ const ArrayComponent = ({ item, update, data }) => {
       {item.items.map((component) => (
         <component.component />
       ))}
-      <button>{item.add_label}</button>
+      <button onClick={() => addItem()}>{item.add_label}</button>
     </span>
   );
 };
