@@ -60,6 +60,8 @@ const ArrayComponent = ({ item, update, data }) => {
             {item.items.map((component) => (
               <component.component />
             ))}
+
+            <button onClick={() => removeItem(index)}>Remove item</button>
           </div>
         ))}
 
