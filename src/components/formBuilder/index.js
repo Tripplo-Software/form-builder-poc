@@ -26,16 +26,17 @@ const FieldComponent = ({ item, update, data }) => {
 const ArrayComponent = ({ item, update, data }) => {
   console.log("ArrayComponent-Value", item);
 
+  const fields = item.items;
   let valueItems = [];
   const addItem = () => {
     if (valueItems.length === 0) {
-      const firstItem = {
-        name: null,
-        job: null,
-      };
+      let firstItem = {};
+      fields.map((field) => (firstItem[`${field.name}`] = null));
       valueItems.push(firstItem);
     } else {
-      valueItems.push({ name: null, job: null });
+      let newItem = {};
+      fields.map((field) => (newItem[`${field.name}`] = null));
+      valueItems.push(newItem);
     }
   };
 
