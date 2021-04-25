@@ -33,7 +33,7 @@ const ArrayComponent = ({ item, update, data }) => {
       let firstItem = {};
       fields.map((field) => (firstItem[`${field.name}`] = null));
 
-      setValueItems(firstItem);
+      setValueItems([firstItem]);
       console.log("xxx");
     } else {
       let newItem = [...valueItems];
@@ -49,13 +49,14 @@ const ArrayComponent = ({ item, update, data }) => {
 
   return (
     <span>
-      {valueItems.map((valueItem, index) => (
-        <div>
-          {item.items.map((component) => (
-            <component.component />
-          ))}
-        </div>
-      ))}
+      {valueItems.length > 0 &&
+        valueItems.map((valueItem, index) => (
+          <div>
+            {item.items.map((component) => (
+              <component.component />
+            ))}
+          </div>
+        ))}
 
       <button onClick={() => addItem()}>{item.add_label}</button>
     </span>
