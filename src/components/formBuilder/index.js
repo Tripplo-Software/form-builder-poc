@@ -45,6 +45,11 @@ const ArrayComponent = ({ item, update, data }) => {
     }
   };
 
+  const removeItem = (index) => {
+    const copyItems = [...valueItems];
+    const cleanedItems = copyItems.splice(index, 1);
+    setValueItems(cleanedItems);
+  };
   console.log("ArrayComponent-Value-2", item, valueItems);
 
   return (
