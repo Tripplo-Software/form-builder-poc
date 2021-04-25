@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import _ from "lodash";
 const FieldComponent = ({ item, update, data }) => {
   console.log("item", item, data);
@@ -24,27 +24,39 @@ const FieldComponent = ({ item, update, data }) => {
 };
 
 const ArrayComponent = ({ item, update, data }) => {
-  console.log("ArrayComponent-Value", item);
-
+  const [valueItems, setValueItems] = useState([]);
   const fields = item.items;
-  let valueItems = [];
+  console.log("ArrayComponent-Value-1", fields);
+
   const addItem = () => {
     if (valueItems.length === 0) {
       let firstItem = {};
       fields.map((field) => (firstItem[`${field.name}`] = null));
-      valueItems.push(firstItem);
+
+      setValueItems(firstItem);
+      console.log("xxx");
     } else {
-      let newItem = {};
+      let newItem = [...valueItems];
       fields.map((field) => (newItem[`${field.name}`] = null));
-      valueItems.push(newItem);
+
+      newItem.push(newItem);
+      setValueItems(newItem);
+      console.log("xxx-2");
     }
   };
 
+  console.log("ArrayComponent-Value-2", item, valueItems);
+
   return (
     <span>
-      {item.items.map((component) => (
-        <component.component />
+      {valueItems.map((valueItem, index) => (
+        <div>
+          {item.items.map((component) => (
+            <component.component />
+          ))}
+        </div>
       ))}
+
       <button onClick={() => addItem()}>{item.add_label}</button>
     </span>
   );
