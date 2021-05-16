@@ -10,9 +10,9 @@ const Index = () => {
   const handleChange = (data) => setFormData({ ...data });
   const handleArrayChange = (data) => setArrayData({ ...data });
 
-  const ref = React.createRef();
-
   console.log("formData", formData);
+  console.log("arrayData", arrayData);
+
   return (
     <>
       <HeadingOne className="text-center text-blue-500">
