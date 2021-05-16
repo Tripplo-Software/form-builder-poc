@@ -36,7 +36,7 @@ const ArrayComponent = ({ item, update, data }) => {
       setValueItems([firstItem]);
       console.log("xxx");
     } else {
-      let newItem = [...valueItems, ...data];
+      let newItem = _.isEmpty(data) ? [...valueItems] : [...valueItems, data];
       fields.map((field) => (newItem[`${field.name}`] = null));
 
       newItem.push(newItem);
