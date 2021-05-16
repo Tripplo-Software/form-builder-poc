@@ -26,7 +26,7 @@ const FieldComponent = ({ item, update, data }) => {
 const ArrayComponent = ({ item, update, data }) => {
   const [valueItems, setValueItems] = useState([]);
   const fields = item.items;
-  console.log("ArrayComponent-Value-1", fields);
+  console.log("ArrayComponent-Value-1", fields, data);
 
   const addItem = () => {
     if (valueItems.length === 0) {
@@ -52,13 +52,22 @@ const ArrayComponent = ({ item, update, data }) => {
   };
   console.log("ArrayComponent-Value-2", item, valueItems);
 
+  const mapComponentData = (e, component) => {
+    const dataClone = { ...data };
+
+    dataClone[`${component.name}`] = e.currentTarget.value;
+
+    update(dataClone);
+  };
   return (
     <span>
       {valueItems.length > 0 &&
         valueItems.map((valueItem, index) => (
           <div>
             {item.items.map((component) => (
-              <component.component />
+              <component.component
+                onChang={(e, component) => mapComponentData(e, component)}
+              />
             ))}
 
             <button onClick={() => removeItem(index)}>Remove item</button>
