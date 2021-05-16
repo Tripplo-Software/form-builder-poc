@@ -24,6 +24,16 @@ const FieldComponent = ({ item, update, data }) => {
 };
 
 const ArrayComponent = ({ item, update, data }) => {
+  /*
+This has to be where we update the amount of components that need
+to render. As well as the overall data object of the form. 
+
+key to know:
+* what is the current data
+* how do you safely update the num of components
+that need to register +  form data
+
+  */
   const [valueItems, setValueItems] = useState([]);
   const fields = item.items;
   console.log("ArrayComponent-Value-1", fields, data);
