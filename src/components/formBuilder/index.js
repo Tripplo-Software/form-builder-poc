@@ -66,7 +66,7 @@ const ArrayComponent = ({ item, update, data }) => {
           <div>
             {item.items.map((component) => (
               <component.component
-                onChang={(e, component) => mapComponentData(e, component)}
+                onChange={(e, component) => mapComponentData(e, component)}
               />
             ))}
 
