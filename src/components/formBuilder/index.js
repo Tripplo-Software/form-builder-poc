@@ -46,11 +46,12 @@ that need to register +  form data
       setValueItems([firstItem]);
       console.log("xxx");
     } else {
-      let newItem = _.isEmpty(data) ? [...valueItems] : [...valueItems, data];
+      let newItem = [...valueItems];
       fields.map((field) => (newItem[`${field.name}`] = null));
 
       newItem.push(newItem);
       setValueItems(newItem);
+      update();
       console.log("xxx-2");
     }
   };
